@@ -8,7 +8,7 @@ interface ProductProps {
 export function Product({ product }: ProductProps) {
   const [details, setDetails] = useState(false);
 
-  const btnBgClassName = details ? 'bg-yellow-400' : 'bg-blue-400';
+  const btnBgClassName = details ? 'bg-blue-400' : 'bg-yellow-400';
   const btnClasses = ['py-2 px-4 border', btnBgClassName];
 
   return (
@@ -26,6 +26,10 @@ export function Product({ product }: ProductProps) {
       {details && (
         <div>
           <p>{product.description}</p>
+          <p>
+            Rate:{' '}
+            <span style={{ fontWeight: 'bold' }}>{product.rating.rate}</span>
+          </p>
         </div>
       )}
       {/* <p>{product.description}</p> */}
